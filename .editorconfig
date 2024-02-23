@@ -1,0 +1,33 @@
+# 官网：https://editorconfig.org/
+# 编辑器统一代码风格：由于习惯的不同，导致他们用的编辑器五花八门，有vscode,有webstorm,有sublime,等等
+# 修改这个文件要重启vscode才有效果
+
+# 告诉EditorConfig插件，这是根文件，不用继续往上查找
+root = true
+
+# 匹配全部文件
+[*]
+# 指定文件的字符编码，通常为 utf-8。
+charset = utf-8
+# 缩进风格，可选"space"、"tab"
+indent_style = space
+# 使用Tab 4 个空格来缩进
+indent_size = 4
+# 结尾换行符，可选"lf"、"cr"、"crlf"
+end_of_line = lf
+# 指定文件末尾是否插入空行。
+insert_final_newline = true
+# 指定是否删除行尾的空白字符。
+trim_trailing_whitespace = true
+
+
+# tab的宽度
+tab_width = 8
+
+[*.md]
+trim_trailing_whitespace = false
+
+
+
+
+

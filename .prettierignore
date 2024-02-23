@@ -1,0 +1,6 @@
+# 配置 Prettier 格式化时需要忽略的文件
+build
+config
+node_modules
+static
+dist

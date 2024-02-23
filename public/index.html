@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="UTF-8" />
+        <!-- <link
+            rel="icon"
+            type="image/x-icon"
+            href=""
+        /> -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta
+            name="viewport"
+            content="width=device-width,initial-scale=1.0,user-scalable=no,maximum-scale=1.0,minimum-scale=1.0,viewport-fit=cover"
+        />
+        <meta httpEquiv="Content-Language" content="zh-CN" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Cache-control" content="no-cache" />
+        <meta http-equiv="Cache" content="no-cache" />
+        <meta http-equiv="window-target" content="_top" />
+        <meta name="format-detection" content="telephone=no" />
+        <title><%= htmlWebpackPlugin.options.title %></title>
+    </head>
+    <!-- polyfill 支持， 默认feature default,es2015,es2016,es2017,es2018,es2019,es5,es6,es7,es8 -->
+    <script
+        crossorigin="anonymous"
+        src="https://polyfill.io/v3/polyfill.min.js?flags=gated&features=default%2Ces2015%2Ces2016%2Ces2017%2Ces2018%2Ces2019%2Ces5%2Ces6%2Ces7%2Csmoothscroll%2CResizeObserver%2CAbortController"
+    ></script>
+    <body>
+        <div id="root"></div>
+    </body>
+</html>

@@ -1,0 +1,132 @@
+/*
+编译TypeScript的配置文件
+tsconfig.json 配置参考(有其他开发规范): https://lq782655835.github.io/blogs/project/ts-tsconfig.html
+
+在文件开头添加，当前文件不检查
+// @ts-nocheck
+
+该行代码上加，忽略此行类型检查
+// @ts-ignore
+
+断言，关闭该字段类型检查
+as any
+
+声明未使用的变量不检查
+在变量名前加下划线 _text
+
+name!
+非空断言操作符!来告诉编译器，我们确定name不会为null或undefined
+
+设置特定文件为非严格模式
+文件开头加上:
+'use sloppy';
+
+代码块严格模式
+文件代码块位置：
+'use strict';
+
+非严格模式的立即执行函数
+(function() {
+  // 这里是非严格模式
+})();
+
+error TS2339: Property 'id' does not exist on type '{}'.
+this.saveObj4.id;
+
+private saveObj4 = {};
+变
+private saveObj4 = {} as any;
+
+
+error TS2339: Property 'value' does not exist on type 'unknown'.
+this.inputRef5.current!.value
+private inputRef1 = createRef();
+变
+private inputRef1 = createRef<HTMLInputElement>();
+
+
+error TS2339: Property 'validateFields' does not exist on type 'unknown'.
+this.formRef1.current!.validateFields()
+private formRef1 = createRef();
+变
+private formRef1 = createRef<HTMLFormElement>();
+需要 antd Form 的实例
+error TS2322: Type 'RefObject<unknown>' is not assignable to type 'Ref<FormInstance<any>>'.
+import { FormInstance } from 'antd/lib/form';
+private formRef1 = createRef<FormInstance>();
+
+
+*/
+{
+  "compilerOptions": {
+    // 指定 ECMAScript 目标版本:  'ES3' (default)、 'ES5'、 'ES2015'、 'ES2016'、 'ES2017'、 'ESNEXT'（"ESNext"表示最新的ES语法，包括还处在stage X阶段）
+    "target": "esnext",
+    // 指定使用模块: 'commonjs'、 'amd'、 'system'、 'umd'、 'es2015'
+    "module": "esnext",
+    // 以严格模式检查每个模块，并在每个文件里加入 'use strict'
+    "alwaysStrict": false,
+    // 启用所有严格类型检查选项
+    "strict": false,
+    // 指定 jsx 代码的生成: 'preserve'、 'react-native'、 'react'
+    "jsx": "preserve",// 在 React 项目中设置为“react”
+    // 是否允许编译javascript文件。boolean值，默认值：false
+    "allowJs": true,
+    // 将每个文件做为单独的模块
+    "isolatedModules": true,
+    // 选择模块解析策略：node、classic
+    "moduleResolution": "node",
+    // 是否启用实验性的ES装饰器
+    "experimentalDecorators": true,
+    // 跳过所有声明文件的类型检查
+    "skipLibCheck": true,
+    // 发出额外的JavaScript以简化对导入CommonJS模块的支持
+    "esModuleInterop": true,
+    // 允许从没有设置默认导出的模块中默认导入
+    "allowSyntheticDefaultImports": true,
+    // 是否使用 Object.defineProperty 定义类字段
+    "useDefineForClassFields": true,
+    // 生成单独的 sourcemap 文件，可以映射回原始的源代码,方便调试
+    "sourceMap": true,
+    // 有未使用的变量时，是否抛出错误。boolean值，默认值： false  --- 这里设置无效！！！
+    "noUnusedLocals": false,
+    // 有未使用的参数时，是否抛出错误。boolean值，默认值： false
+    "noUnusedParameters": false,
+    // 忽略 TypeScript 文件名大小写检查
+    "forceConsistentCasingInFileNames": false,
+    // 用于解析非相对模块名称的基目录
+    "baseUrl": ".",
+    // 指定需要包含的类型声明文件
+    "types": [
+      "webpack-env",
+      "jest"
+    ],
+    // 路径映射
+    "paths": {
+      "@/*": [
+        "src/*"
+      ],
+      "@sky/*": ["../../*"],
+      "@root/*": ["./*"]
+    },
+    // 编译过程中需要引入的库文件的列表
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  },
+  // 指定编译器需要编译的文件或文件夹
+  "include": [
+    "*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "tests/**/*.ts",
+    "tests/**/*.tsx"
+  ],
+  // 编译器需要排除在外的文件或文件夹
+  "exclude": [
+    "node_modules"
+  ]
+}
