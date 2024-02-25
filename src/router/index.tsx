@@ -7,11 +7,11 @@ import SuspenseLazy from '@/components/SuspenseLazy';
 import { Navigate, RouteObject } from 'react-router-dom';
 import { extend } from 'dayjs';
 
-const Home = SuspenseLazy(() => import(/* webpackChunkName:"home" */ '@/routerView/home'));
+const Home = SuspenseLazy(() => import(/* webpackChunkName:"home" */ '@/pages/home'));
 
-const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@/routerView/404'));
+const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@/pages/404'));
 
-const Login = SuspenseLazy(() => import(/* webpackChunkName:"login" */ '@/routerView/login'));
+const Login = SuspenseLazy(() => import(/* webpackChunkName:"login" */ '@/pages/login'));
 
 let firstArr = [];
 let homeArr = [];
@@ -20,7 +20,7 @@ console.log('files.keys()===', files.keys());
 files.keys().forEach((item) => {
     let filesObj = files(item).default;
     // console.log('context===', filesObj);
-    filesObj.path = item.slice(12, -10);
+    filesObj.path = item.slice(7, -10);
     filesObj.element = SuspenseLazy(filesObj.content);
     delete filesObj.content;
     if (filesObj.superior == '/home') {

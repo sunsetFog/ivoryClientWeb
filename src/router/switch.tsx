@@ -1,6 +1,6 @@
 import React from 'react';
-import Home from '@/routerView/home/index';
-import NotFound from '@/routerView/404/index';
+import Home from '@/pages/home/index';
+import NotFound from '@/pages/404/index';
 /*
 react-router-dom升级 v6
 Routes 替换 Switch
@@ -10,7 +10,7 @@ element={<App />} 替换 component={App}
 不设置props的children, 用Outlet了
 withRouter删了
 */
-import {BrowserRouter, Route, Routes, Navigate} from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 // import {Provider} from 'react-redux';
 // import {hot} from 'react-hot-loader';
 
