@@ -13,6 +13,8 @@ const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@
 
 const Login = SuspenseLazy(() => import(/* webpackChunkName:"login" */ '@/pages/login'));
 
+const Register = SuspenseLazy(() => import(/* webpackChunkName:"login" */ '@/pages/register'));
+
 let firstArr = [];
 let homeArr = [];
 const files = require.context('../', true, /\/router\.ts$/);
@@ -54,7 +56,12 @@ const routes = [
     {
         path: '/login',
         element: Login,
-        name: '端午活动',
+        name: '登陆',
+    },
+    {
+        path: '/register',
+        element: Register,
+        name: '注册',
     },
     // 未匹配到页面
     {
