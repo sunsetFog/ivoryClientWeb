@@ -96,7 +96,7 @@ module.exports = [
             {
                 loader: 'sass-resources-loader',
                 options: {
-                    resources: `${paths.appSrc}/@energy/styles/platform/${process.env.REACT_APP_PLATFORM}/scssVariable.scss`,
+                    resources: `${paths.appSrc}/@energy/styles/platform/${process.env.REACT_APP_PLATFORM}/variable/index.scss`,
                     hoistUseStatements: true,
                 },
             }

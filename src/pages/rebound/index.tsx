@@ -24,7 +24,7 @@ class Rebound extends Component {
     }
     public componentWillUnmount() {
         this.fruitRef.current?.removeEventListener('mousedown', this.downWay);
-        this.upWay();
+        this.upWay(null);
     }
     public downWay = (event) => {
         // 用transform导致offsetLeft不变，因此需要getBoundingClientRect方法，或者改定位移动就能获取offsetLeft值
