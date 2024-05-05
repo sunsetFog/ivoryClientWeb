@@ -1,87 +1,47 @@
-
-.home-box {
+.homeUnit {
     width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: row;
-    background-color: #fff;
-    .home-left {
-        width: 300px;
-        height: 100%;
-        box-shadow: 0 1px 2px #999999;
-        overflow: hidden;
-        .logoBox {
-            width: 100%;
-            height: 50px;
-            margin: 20px 0 30px 0;
-            img {
-                width: 50px;
-                height: 50px;
+    min-height: 100%;
+    .giveBar {
+        width: 100%;
+        height: 80px;
+        background: linear-gradient(180deg, #f0f7ff, #fff 37.95%, #f1f7ff 80.21%, #fdfeff 96.05%, #d4e8ff 98.75%);
+        box-shadow: 0 5px 12px 2px rgba(220, 233, 252, .64);
+        display: flex;
+        justify-content: center;
+        main {
+            width: 1485px;
+            min-width: 1485px;
+            height: 100%;
+            .logoBar {
+                width: 150px;
+                height: 100%;
+                margin-right: 50px;
                 float: left;
-                margin: 0 10px;
+                background-image: url('./img/logo.png');
+                background-repeat: no-repeat;
+                background-size: 100% 54px;
+                background-position: left center;
             }
-            p {
-                height: 50px;
-                line-height: 50px;
-                display: inline-block;
+            .navigationBar {
+                width: calc(100% - 400px);
+                height: 100%;
                 float: left;
-                color: #435ebe;
-                font-weight: 600;
-                font-size: 24px;
+            }
+            .userBar {
+                width: 150px;
+                height: 100%;
+                margin-left: 50px;
+                float: left;
             }
         }
-
     }
-    .home-right {
-        flex: 1;
-        height: 100%;
-        overflow: hidden;
-        .headerBox {
-            width: 100%;
-            height: 50px;
-            line-height: 50px;
-            padding: 0 20px;
-            box-shadow: 0 0.5px 2px #999999;
-            .show-menu {
-                font-size: 24px;
-            }
-
-            .user-box {
-                height: 100%;
-                float: right;
-                div:nth-of-type(1) {
-                    width: 35px;
-                    height: 100%;
-                    float: left;
-                    margin-right: 10px;
-                    img {
-                        width: 35px;
-                        height: 35px;
-                        margin-top: 8px;
-                    }
-                }
-                div:nth-of-type(2) {
-                    float: right;
-                    height: 100%;
-                    span {
-                        height: 25px;
-                        line-height: 25px;
-                        font-size: 14px;
-                        margin-top: 14px;
-                    }
-                }
-            }
-        }
-        .gourdBox {
-            width: 100%;
-            height: calc(100% - 50px);
-            padding: 8px 10px 8px 10px;
-            position: relative;
-            .pen-router-view {
-                width: 100%;
-                height: 100%;
-                overflow: auto;
-            }
-        }
+    .pieceBar {
+        width: 100%;
+        min-height: 600px;
+    }
+    .seabed {
+        width: 100%;
+        height: 160px;
+        background: linear-gradient(180deg, #3a485b, #252e3d 89.29%);
     }
 }

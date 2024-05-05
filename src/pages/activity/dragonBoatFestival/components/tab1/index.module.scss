@@ -1,0 +1,92 @@
+.Tab1 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .repeatedly {
+    width: 1536px;
+    min-width: 1536px;
+    height: 1555px;
+    position: relative;
+    margin-top: 30px;
+    .imgTitle {
+      width: 100%;
+      height: 234px;
+      background: url('./img/img_title_01.png');
+      background-repeat: no-repeat;
+      background-size: 862px 234px;
+      background-position: center top;
+      position: absolute;
+      left: 0px;
+      top: -50px;
+      z-index: 3;
+    }
+    .bamboo {
+      width: 1738px;
+      height: 800px;
+      background: url('./img/img_mod_btm01.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+      position: absolute;
+      left: -101px;
+      bottom: 20px;
+      z-index: 1;
+    }
+    .contentBox {
+      width: 100%;
+      height: 100%;
+      padding: 295px 276px 80px 293px;
+      box-sizing: border-box;
+      background: url('./img/box.png');
+      background-repeat: no-repeat;
+      background-size: 100% 1550px;
+      background-position: center bottom;
+      position: absolute;
+      left: 0px;
+      top: 0px;
+      z-index: 2;
+    }
+  }
+
+
+  .fruit {
+    width: 100%;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 45px;
+    img {
+      width: 710px;
+      height: 100%;
+    }
+  }
+  .cakes {
+    width: 100%;
+    height: 108px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 19px;
+    font-size: 20px;
+    div {
+      width: 394px;
+      height: 100%;
+      background: no-repeat url('./img/img_text_bg.png');
+      background-size: 100% 100%;
+      padding: 42px 0px 0 0px;
+      box-sizing: border-box;
+      color: #FFF3C9;
+      font-weight: 500;
+      text-align: center;
+      span {
+        color: #F56565;
+        font-weight: 700;
+      }
+    }
+  }
+
+
+
+
+}

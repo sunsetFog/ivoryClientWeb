@@ -13,7 +13,7 @@ const NotFound = SuspenseLazy(() => import(/* webpackChunkName:"not-found" */ '@
 
 const Login = SuspenseLazy(() => import(/* webpackChunkName:"login" */ '@/pages/login'));
 
-const Register = SuspenseLazy(() => import(/* webpackChunkName:"login" */ '@/pages/register'));
+const Register = SuspenseLazy(() => import(/* webpackChunkName:"register" */ '@/pages/register'));
 
 let firstArr = [];
 let homeArr = [];
@@ -26,13 +26,15 @@ files.keys().forEach((item) => {
     filesObj.element = SuspenseLazy(filesObj.content);
     delete filesObj.content;
     if (filesObj.superior == '/home') {
+        filesObj.path = filesObj.superior + filesObj.path;
         homeArr.push(filesObj);
     }
     if (!filesObj.superior) {
         firstArr.push(filesObj);
     }
 });
-
+// homeArr[0].path = '/home' + homeArr[0].path;
+console.log('--homeArr--', homeArr);
 // const routes: RouteObject[] = [
 const routes = [
     ...firstArr,

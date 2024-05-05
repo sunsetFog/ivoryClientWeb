@@ -1,0 +1,28 @@
+.Tab4 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .applyBox {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    p {
+      width: 840px;
+      height: 47px;
+      color: #FFFFFF;
+      background: #478C48;
+      display: flex;
+      align-items: center;
+      border-radius: 60px;
+      font-size: 20px;
+      padding: 0 32px;
+      line-height: 47px;
+      box-sizing: border-box;
+    }
+  }
+}

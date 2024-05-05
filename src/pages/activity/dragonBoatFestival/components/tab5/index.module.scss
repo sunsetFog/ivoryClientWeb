@@ -1,0 +1,18 @@
+.Tab5 {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  .vipMoney {
+    width: 1320px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-bottom: 30px;
+    img {
+      width: 294px;
+      height: 284px;
+      margin: 10px 10px;
+    }
+  }
+}
