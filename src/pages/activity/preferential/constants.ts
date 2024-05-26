@@ -45,8 +45,8 @@ export let contentArr = [
         path: '',
     },
     {
-        title: '',
-        path: '',
+        title: '兑换',
+        path: '/home/activity/exchange',
     },
     {
         title: '',
