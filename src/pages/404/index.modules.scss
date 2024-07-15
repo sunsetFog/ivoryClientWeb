@@ -1,12 +1,58 @@
 .not-found-root {
-    z-index: 9999;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     width: 100vw;
     height: 100vh;
-    color: #7a7a7b;
-    font-weight: 800;
-    font-size: 110px;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .yummy {
+        width: 638px;
+        height: 538px;
+        background-image: url('./img/img_404.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+    .delicious {
+        width: 638px;
+        padding-left: 25px;
+        .sticky {
+            // color: #7a7a7b;
+            color: #2f3035;
+            font-size: 56px;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .tender {
+            color: #757884;
+            font-size: 30px;
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+        .refreshing {
+            color: #757884;
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 30px;
+            margin-bottom: 60px;
+        }
+        .zippy {
+            width: 100%;
+            height: 36px;
+            button {
+                width: 108px;
+                height: 36px;
+                border-radius: 4px;
+                color: #fff;
+                font-size: 14px;
+                background: #0e5e99;
+                float: left;
+                box-shadow: 0 28px 60px 0 rgba(47, 48, 53, 0.1);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            button:nth-of-type(2) {
+                margin-left: 25px;
+            }
+        }
+    }
 }
