@@ -5,7 +5,7 @@ export let tabList = [
     },
     {
         title: '电竞',
-        path: '',
+        path: '/home/waterfall',
     },
     {
         title: '体育',
