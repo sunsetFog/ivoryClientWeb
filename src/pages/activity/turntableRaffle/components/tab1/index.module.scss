@@ -1,0 +1,137 @@
+.tab1 {
+  width: 100%;
+
+  .successMsg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+    width: 1020px;
+    height: 110px;
+    margin: -55px 0 0 -510px;
+    font-size: 32px;
+    line-height: 110px;
+    color: $white;
+    text-align: center;
+    background: linear-gradient(
+      90deg,
+      rgb(225 49 70 / 0%) 0%,
+      rgb(225 49 70 / 80%) 15.29%,
+      rgb(225 49 70 / 94%) 23.35%,
+      rgb(225 49 70 / 98%) 49.13%,
+      rgb(225 49 70 / 94%) 79.74%,
+      rgb(225 49 70 / 80%) 86.79%,
+      rgb(225 49 70 / 0%) 100%
+    );
+  }
+
+  .cauliflower {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 688px;
+
+    main {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 688px;
+      height: 100%;
+
+      .toGo {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        z-index: 2;
+        width: 348px;
+        height: 348px;
+        background: none;
+        border: none;
+        outline: none;
+        transform: translate(-50%, -50%);
+      }
+    }
+
+    .petal1 {
+      background: url('./img/bg.png');
+      background-repeat: no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  .papaya {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 47px;
+    margin-top: 32px;
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 204px;
+      height: 100%;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 600;
+      color: #fff;
+      background: radial-gradient(
+        131.06% 113.71% at 50% -13.71%,
+        #a0d8ff 0%,
+        #6cc4ff 57.29%,
+        #49b3ff 100%
+      );
+      border: none;
+      border: 0.5px solid rgb(255 255 255 / 24%);
+      border-radius: 26px;
+      outline: none;
+      box-shadow: 0 -2px 5px 0 rgb(171 210 253 / 36%) inset;
+    }
+  }
+
+  .scenery {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+
+    div {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-style: normal;
+      font-weight: 400;
+      color: $color-text-primary-active;
+
+      svg {
+        margin-left: 2px;
+      }
+    }
+  }
+
+  .rainbow {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0;
+    margin-bottom: 48px;
+
+    .sp1 {
+      margin-right: 48px;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      color: $color-text;
+
+      span {
+        margin: 0 4px;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 500;
+        color: $color-text-primary;
+      }
+    }
+  }
+}

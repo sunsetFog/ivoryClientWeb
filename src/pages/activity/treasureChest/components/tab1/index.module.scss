@@ -1,0 +1,169 @@
+.tab1 {
+  width: 100%;
+
+  .successMsg {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    z-index: 9;
+    width: 1020px;
+    height: 110px;
+    margin: -55px 0 0 -510px;
+    font-size: 32px;
+    line-height: 110px;
+    color: $white;
+    text-align: center;
+    background: linear-gradient(
+      90deg,
+      rgb(225 49 70 / 0%) 0%,
+      rgb(225 49 70 / 80%) 15.29%,
+      rgb(225 49 70 / 94%) 23.35%,
+      rgb(225 49 70 / 98%) 49.13%,
+      rgb(225 49 70 / 94%) 79.74%,
+      rgb(225 49 70 / 80%) 86.79%,
+      rgb(225 49 70 / 0%) 100%
+    );
+  }
+
+  .rapeseed {
+    width: 100%;
+    height: 455px;
+    margin-bottom: 48px;
+
+    .leftBox {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      float: left;
+      width: calc(100% - 400px);
+      height: 100%;
+
+      .metals {
+        width: 720px;
+        height: 218px;
+
+        .saturn {
+          width: 100%;
+          height: fit-content;
+          padding: 16px 20px;
+          border: 1px solid $color-layer-divide;
+          border-radius: 16px;
+
+          ul {
+            display: flex;
+            width: 100%;
+            height: 56px;
+            border-bottom: 1px solid $color-layer-divide-alt;
+
+            li {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              float: left;
+              width: calc(100% / 9);
+              height: 100%;
+              font-size: 16px;
+              font-style: normal;
+              font-weight: 400;
+              color: $color-text;
+            }
+
+            li:nth-of-type(1) {
+              color: $color-act-text-weak;
+            }
+          }
+
+          ul:last-child {
+            border-bottom: none;
+          }
+        }
+
+        .rainbow {
+          width: 100%;
+          padding: 20px 0;
+
+          .sp1 {
+            margin-right: 20px;
+            font-size: 18px;
+            font-style: normal;
+            font-weight: 400;
+            color: $color-text;
+
+            span {
+              margin: 0 4px;
+              font-size: 18px;
+              font-style: normal;
+              font-weight: 500;
+              color: $color-text-primary;
+            }
+          }
+        }
+
+        .spring {
+          width: 100%;
+
+          label {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            color: $color-text-primary-active;
+          }
+        }
+      }
+    }
+
+    .rightBox {
+      display: flex;
+      flex-direction: column;
+      float: right;
+      width: 400px;
+      height: 100%;
+
+      .jupiter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 400px;
+
+        img {
+          width: 400px;
+          height: 100%;
+        }
+      }
+
+      .mercury {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 47px;
+        margin-top: 8px;
+
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: 220px;
+          height: 100%;
+          font-size: 18px;
+          font-style: normal;
+          font-weight: 600;
+          color: #fff;
+          background: radial-gradient(
+            131.06% 113.71% at 50% -13.71%,
+            #a0d8ff 0%,
+            #6cc4ff 57.29%,
+            #49b3ff 100%
+          );
+          border: none;
+          border: 0.5px solid rgb(255 255 255 / 24%);
+          border-radius: 26px;
+          outline: none;
+          box-shadow: 0 -2px 5px 0 rgb(171 210 253 / 36%) inset;
+        }
+      }
+    }
+  }
+}

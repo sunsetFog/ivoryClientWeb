@@ -38,7 +38,7 @@ export let contentArr = [
     },
     {
         title: '转盘抽奖',
-        path: '',
+        path: '/home/activity/turntableRaffle',
     },
     {
         title: '开宝箱',
