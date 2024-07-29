@@ -1,5 +1,109 @@
 .exchange {
     width: 100%;
-    height: 100%;
-    overflow: auto;
+    background-color: #ebf7ff;
+
+    .bannerBox {
+        width: 100%;
+        height: 580px;
+        background-image: url('./img/banner.png');
+        background-size: 100% 100%;
+        background-repeat: no-repeat;
+    }
+
+    .mercury {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+
+        .pumpkin {
+            width: 1200px;
+            min-width: 1200px;
+
+            .titleBar {
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                height: 74px;
+                margin-bottom: 48px;
+
+                div {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 600px;
+                    height: 100%;
+                    font-size: 24px;
+                    color: #6ac4ff;
+                    border-bottom: 3px solid #6ac4ff;
+                }
+            }
+
+            :global {
+                .ant-tabs-nav-operations {
+                    display: none !important;
+                }
+
+                .ant-tabs-nav {
+                    margin: 0 0 48px;
+
+                    &::before {
+                        border-bottom: 2px solid #d6dade;
+                    }
+                }
+
+                .ant-tabs-nav-list {
+                    width: 100%;
+                }
+
+                .ant-tabs-tab {
+                    justify-content: center;
+                    width: 50%;
+                    height: 74px;
+                    padding: 0;
+                    margin: 0;
+                    font-size: 24px;
+                    color: #31455a;
+                }
+
+                .ant-tabs-tab-active .ant-tabs-tab-btn {
+                    color: #6ac4ff;
+                }
+
+                .ant-tabs-ink-bar {
+                    height: 3px;
+                    background: #6ac4ff;
+                }
+            }
+        }
+    }
+    .cabbage {
+        width: 1200px;
+        padding: 0 0 60px;
+        margin: 0 auto;
+
+        .titleBox {
+          width: 100%;
+          height: 86px;
+          font-size: 46px;
+          font-weight: 900;
+          line-height: 46px;
+          line-height: 105px;
+          color: #31455a;
+          text-align: center;
+          background: url('./img/activit_img_titel.png');
+          background-repeat: no-repeat;
+          background-size: 100% 100%;
+        }
+
+        .pumpkin {
+          width: 100%;
+          min-height: 400px;
+          padding: 48px;
+          margin-top: 32px;
+          background: linear-gradient(180deg, #fdfeff 13.02%, #fdfeff 86.98%, #edf7ff 100%);
+          border-radius: 20px;
+          box-shadow: 0 -2px 0 0 #93b6d3 inset, 0 -3px 2px 0 #aecce4 inset, 0 1px 1px 0 #fff inset,
+            0 4px 10px 0 rgb(125 168 207 / 35%);
+        }
+    }
 }

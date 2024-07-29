@@ -37,6 +37,7 @@ function recordModal({ onRef }: ActivityRecordModalPropsType) {
                     {timeList.map((item, index) => {
                         return (
                             <div
+                                key={index}
                                 className={petalActive == index ? styles.cherry : styles.grape}
                                 onClick={() => {
                                     marsWay(item, index, petalActive);
