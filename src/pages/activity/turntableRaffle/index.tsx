@@ -3,22 +3,14 @@ import { observer } from 'mobx-react';
 // component
 import { compose } from '@/utils/redux';
 import styles from './index.module.scss';
-
-import pleaseToDo from '@/components/pleaseToDo';
 import { Tabs } from 'antd';
 import Tab1 from './components/tab1';
 import Tab2 from './components/tab2';
+import RecordModal from '@/pages/activity/turntableRaffle/components/recordModal';
 
 function turntableRaffle(props: any) {
-    const { pleaseBindPhone } = pleaseToDo();
     const recRef = useRef<any>();
     const [_activeKey, setActiveOfKey] = useState('1');
-
-    const bannerWay = () => {
-        pleaseBindPhone(function () {
-            console.log('okk');
-        });
-    };
     const tabChange = (activeKey) => {
         setActiveOfKey(activeKey);
     };
@@ -30,7 +22,7 @@ function turntableRaffle(props: any) {
     };
     return (
         <section className={styles.turntableRaffle}>
-            <div className={styles.bannerBox} onClick={bannerWay}></div>
+            <div className={styles.bannerBox}></div>
             <div className={styles.mercury}>
                 <div className={styles.pumpkin}>
                     <Tabs defaultActiveKey={defaultWay()} onChange={tabChange}>
@@ -47,6 +39,7 @@ function turntableRaffle(props: any) {
                 <div className={styles.titleBox}>活动简介</div>
                 <div className={styles.pumpkin}></div>
             </main>
+            <RecordModal onRef={recRef}></RecordModal>
         </section>
     );
 }

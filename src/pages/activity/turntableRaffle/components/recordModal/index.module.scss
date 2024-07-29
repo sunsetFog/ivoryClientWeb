@@ -1,0 +1,95 @@
+.recordModal {
+    width: 520px;
+    height: 435px;
+    padding: 24px 40px;
+
+    .chinensis {
+        display: flex;
+        justify-content: space-between;
+        margin: 0 0 24px;
+
+        .cherry,
+        .grape {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 120px;
+            height: 42px;
+            font-size: 16px;
+
+            &:hover {
+                cursor: pointer;
+            }
+        }
+
+        .cherry {
+            color: #fff;
+            background: linear-gradient(180deg, #8bcfff 0%, #6cc4ff 44.29%, #49b3ff 91.62%);
+            border: 0.5px solid rgb(175 238 255 / 50%);
+            border-radius: 22px;
+        }
+
+        .grape {
+            color: #31455a;
+            background: linear-gradient(180deg, #fff 4.55%, #e7f4ff 61.81%, #e5f3ff 99.98%);
+            border: 0.5px solid #c9daeb;
+            border-radius: 24px;
+            box-shadow: 0 -2px 8px 0 #fff inset;
+        }
+    }
+
+    .recordContent {
+        flex: 1;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: #b4e1ff;
+            border-radius: 4px;
+        }
+
+        .fish {
+            width: 100%;
+            height: fit-content;
+            margin-bottom: 16px;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            color: #31455a;
+            text-align: left;
+
+            span {
+                margin-left: 4px;
+                font-size: 14px;
+                font-style: normal;
+                font-weight: 400;
+                color: #6ac4ff;
+            }
+        }
+
+        .emptyBox {
+            width: 100%;
+
+            div {
+                width: 100%;
+                height: 208px;
+                margin-top: 60px;
+                background-image: url('./img/norecord.png');
+                background-size: 290px 208px;
+                background-repeat: no-repeat;
+                background-position: center center;
+            }
+
+            p {
+                margin: 14px 0 20px;
+                font-size: 14px;
+                color: #6f7d8b;
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}

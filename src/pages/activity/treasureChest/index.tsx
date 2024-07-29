@@ -6,6 +6,7 @@ import styles from './index.module.scss';
 import { Tabs } from 'antd';
 import Tab1 from './components/tab1';
 import Tab2 from './components/tab2';
+import RecordModal from '@/pages/activity/turntableRaffle/components/recordModal';
 
 function treasureChest(props: any) {
     const recRef = useRef<any>();
@@ -38,6 +39,7 @@ function treasureChest(props: any) {
                 <div className={styles.titleBox}>活动简介</div>
                 <div className={styles.pumpkin}></div>
             </main>
+            <RecordModal onRef={recRef}></RecordModal>
         </section>
     );
 }
