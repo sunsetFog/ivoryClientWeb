@@ -6,17 +6,16 @@ import styles2 from './index.module.scss';
 const { LuckyWheel } = require('react-luck-draw');
 import { useSetState, useRequest } from 'ahooks';
 import pleaseToDo from '@/components/pleaseToDo';
-import { lotteryApply } from '../../../../services';
-import 'animate.css';
+import { lotteryApply } from '@/pages/activity/turntableRaffle/service';
 import { message } from 'antd';
+import { giftList } from '@/pages/activity/turntableRaffle/constants';
 
 const tab2 = (props: any) => {
     // 是否登录
     const { pleaseLogin } = pleaseToDo();
-    const { venueInfoDetails, recordWay, updateVenueInfo } = props;
-    const gifts1 = venueInfoDetails?.betLotteryDetailResp?.gifts || [];
-    const venueList = venueInfoDetails?.betLotteryDetailResp?.venueList || [];
-    const flowTimes = venueInfoDetails?.betLotteryDetailResp?.flowTimes || 1;
+    const { venueInfoDetails, recordWay } = props;
+    let gifts1 = venueInfoDetails?.betLotteryDetailResp?.gifts || [];
+    gifts1 = giftList;
     const sortList = gifts1?.sort((a, b) => {
         return a.money - b.money;
     });
@@ -32,8 +31,6 @@ const tab2 = (props: any) => {
     const myWheel = useRef<any>(null);
     const winMessage = useRef() as any;
     const lotterying = useRef(false) as any;
-    const [modalVisiable, setModalOfVisiable] = useState(false);
-    const [venueId, setVenueId] = useState(null);
     const keyWay = (num: any = 0) => {
         if (num == 6 || num == 7 || num == 8 || num == 9) {
             return num;
@@ -82,6 +79,10 @@ const tab2 = (props: any) => {
     const { run: runLottery } = useRequest(lotteryApply, {
         manual: true,
         onSuccess(res: any) {
+            res = {
+                message: '恭喜获得彩金500元',
+                data: { id: 500 },
+            };
             const { data, message } = res;
             lotterying.current = true;
             myWheel.current.play();
@@ -90,18 +91,15 @@ const tab2 = (props: any) => {
             const index = arrBox.findIndex((item) => item?.fonts[0]?.id === id);
             setTimeout(() => {
                 myWheel.current.stop(index);
-            }, 500);
+            }, 2500);
         },
         onError() {
             lotterying.current = false;
         },
     });
     const endWay = () => {
-        setTimeout(() => {
-            lotterying.current = false;
-        }, 6200);
+        lotterying.current = false;
         message.success(winMessage.current);
-        updateVenueInfo();
     };
     const playWay = () => {
         if (lotterying.current) {
@@ -112,23 +110,11 @@ const tab2 = (props: any) => {
             return;
         }
         pleaseLogin(() => {
-            if (venueList?.length > 0) {
-                showWay();
-            } else {
-                handleSumit();
-            }
+            handleSumit();
         });
     };
-    const showWay = () => {
-        setModalOfVisiable(true);
-    };
     const handleSumit = () => {
-        if (!venueId && venueList?.length > 0) {
-            return message.info('请选择场馆后抽奖');
-        }
-        setModalOfVisiable(false);
-        runLottery({ category: 1, apiId: venueId });
-        setVenueId(null);
+        runLottery({ category: 1 });
     };
 
     return (
@@ -159,28 +145,7 @@ const tab2 = (props: any) => {
                     }}
                 >
                     查看抽奖记录
-                    <svg
-                        xmlns='http://www.w3.org/2000/svg'
-                        width='14'
-                        height='14'
-                        viewBox='0 0 14 14'
-                        fill='none'
-                    >
-                        <g clip-path='url(#clip0_553_36702)'>
-                            <path
-                                d='M4.5 2L9.5 7L4.5 12'
-                                stroke='#356280'
-                                stroke-width='1.5'
-                                stroke-linecap='round'
-                                stroke-linejoin='round'
-                            />
-                        </g>
-                        <defs>
-                            <clipPath id='clip0_553_36702'>
-                                <rect width='14' height='14' fill='white' />
-                            </clipPath>
-                        </defs>
-                    </svg>
+                    <img src={require('../../img/icon_arrow_right.png')} />
                 </div>
             </div>
             <div className={styles1.rainbow}>

@@ -42,7 +42,7 @@ export let contentArr = [
     },
     {
         title: '开宝箱',
-        path: '',
+        path: '/home/activity/treasureChest',
     },
     {
         title: '兑换',

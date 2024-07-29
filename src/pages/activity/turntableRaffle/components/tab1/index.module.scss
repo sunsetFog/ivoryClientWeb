@@ -11,7 +11,7 @@
     margin: -55px 0 0 -510px;
     font-size: 32px;
     line-height: 110px;
-    color: $white;
+    color: #fff;
     text-align: center;
     background: linear-gradient(
       90deg,
@@ -103,10 +103,12 @@
       font-size: 14px;
       font-style: normal;
       font-weight: 400;
-      color: $color-text-primary-active;
+      color: #356280;
 
-      svg {
-        margin-left: 2px;
+      img {
+        width: 8px;
+        height: 16px;
+        margin-left: 4px;
       }
     }
   }
@@ -123,14 +125,14 @@
       font-size: 18px;
       font-style: normal;
       font-weight: 400;
-      color: $color-text;
+      color: #31455a;
 
       span {
         margin: 0 4px;
         font-size: 18px;
         font-style: normal;
         font-weight: 500;
-        color: $color-text-primary;
+        color: #6ac4ff;
       }
     }
   }

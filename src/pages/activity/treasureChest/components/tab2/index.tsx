@@ -2,16 +2,15 @@ import React, { useRef, useState } from 'react';
 // styles1
 import styles1 from '../tab1/index.module.scss';
 import pleaseToDo from '@/components/pleaseToDo';
-import { lotteryApply } from '../../../../services';
+import { lotteryApply } from '@/pages/activity/turntableRaffle/service';
 import { useRequest } from 'ahooks';
-import 'animate.css';
 import { message } from 'antd';
+import { giftList } from '@/pages/activity/turntableRaffle/constants';
 
 const tab2 = (props: any) => {
-    const { venueInfoDetails, recordWay, updateVenueInfo } = props;
-    const gifts1 = venueInfoDetails?.betLotteryDetailResp?.gifts || [];
-    const venueList = venueInfoDetails?.betLotteryDetailResp?.venueList || [];
-    const flowTimes = venueInfoDetails?.betLotteryDetailResp?.flowTimes || 1;
+    const { venueInfoDetails, recordWay } = props;
+    let gifts1 = venueInfoDetails?.betLotteryDetailResp?.gifts || [];
+    gifts1 = giftList;
     let gifts2 = [];
     let arrBox = [];
     for (let i = 0; i < gifts1.length; i++) {
@@ -26,19 +25,20 @@ const tab2 = (props: any) => {
 
     // 是否登录
     const { pleaseLogin } = pleaseToDo();
-    const [modalVisiable, setModalOfVisiable] = useState(false);
-    const [venueId, setVenueId] = useState(null);
     const [showMsg, setShowMsg] = useState(false);
     const lotterying = useRef(false) as any;
     const { run: runLottery } = useRequest(lotteryApply, {
         manual: true,
         onSuccess(res: any) {
-            const { message } = res;
+            res = {
+                message: '恭喜获得彩金200元',
+                data: { id: 200 },
+            };
+            const { message: potato } = res;
             setShowMsg(true);
             lotterying.current = true;
-            updateVenueInfo();
             setTimeout(() => {
-                message.success(message);
+                message.success(potato);
             }, 1700);
             setTimeout(() => {
                 setShowMsg(false);
@@ -56,23 +56,11 @@ const tab2 = (props: any) => {
             return;
         }
         pleaseLogin(() => {
-            if (venueList?.length > 0) {
-                showWay();
-            } else {
-                handleSumit();
-            }
+            handleSumit();
         });
     };
-    const showWay = () => {
-        setModalOfVisiable(true);
-    };
     const handleSumit = () => {
-        if (!venueId && venueList?.length > 0) {
-            return message.info('请选择场馆后抽奖');
-        }
-        setModalOfVisiable(false);
-        runLottery({ category: 1, apiId: venueId });
-        setVenueId(null);
+        runLottery({ category: 1 });
     };
     return (
         <div className={styles1.tab1}>
@@ -132,28 +120,7 @@ const tab2 = (props: any) => {
                                 }}
                             >
                                 查看抽奖记录
-                                <svg
-                                    xmlns='http://www.w3.org/2000/svg'
-                                    width='14'
-                                    height='14'
-                                    viewBox='0 0 14 14'
-                                    fill='none'
-                                >
-                                    <g clip-path='url(#clip0_2863_26999)'>
-                                        <path
-                                            d='M4.5 2L9.5 7L4.5 12'
-                                            stroke='#356280'
-                                            stroke-width='1.5'
-                                            stroke-linecap='round'
-                                            stroke-linejoin='round'
-                                        />
-                                    </g>
-                                    <defs>
-                                        <clipPath id='clip0_2863_26999'>
-                                            <rect width='14' height='14' fill='white' />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
+                                <img src={require('../../img/icon_arrow_right.png')} />
                             </label>
                         </div>
                     </div>

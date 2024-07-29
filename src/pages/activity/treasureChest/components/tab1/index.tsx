@@ -3,16 +3,15 @@ import React, { useRef, useState } from 'react';
 import styles from './index.module.scss';
 import pleaseToDo from '@/components/pleaseToDo';
 
-import { lotteryApply } from '../../../../services';
+import { lotteryApply } from '@/pages/activity/turntableRaffle/service';
 import { useRequest } from 'ahooks';
-import 'animate.css';
 import { message } from 'antd';
+import { giftList } from '@/pages/activity/turntableRaffle/constants';
 
 const tab1 = (props: any) => {
-    const { venueInfoDetails, recordWay, updateVenueInfo } = props;
-    const gifts1 = venueInfoDetails?.signLotteryDetailResp?.gifts || [];
-    const venueList = venueInfoDetails?.signLotteryDetailResp?.venueList || [];
-    const flowTimes = venueInfoDetails?.signLotteryDetailResp?.flowTimes || 1;
+    const { venueInfoDetails, recordWay } = props;
+    let gifts1 = venueInfoDetails?.signLotteryDetailResp?.gifts || [];
+    gifts1 = giftList;
     let gifts2 = [];
     let arrBox = [];
     for (let i = 0; i < gifts1.length; i++) {
@@ -27,18 +26,20 @@ const tab1 = (props: any) => {
 
     // 是否登录
     const { pleaseLogin } = pleaseToDo();
-    const [venueId, setVenueId] = useState(null);
     const [showMsg, setShowMsg] = useState(false);
     const lotterying = useRef(false) as any;
     const { run: runLottery } = useRequest(lotteryApply, {
         manual: true,
         onSuccess(res: any) {
-            const { message } = res;
+            res = {
+                message: '恭喜获得彩金600元',
+                data: { id: 600 },
+            };
+            const { message: potato } = res;
             setShowMsg(true);
             lotterying.current = true;
-            updateVenueInfo();
             setTimeout(() => {
-                message.success(message);
+                message.success(potato);
             }, 1700);
             setTimeout(() => {
                 setShowMsg(false);
@@ -60,11 +61,7 @@ const tab1 = (props: any) => {
         });
     };
     const handleSumit = () => {
-        if (!venueId && venueList?.length > 0) {
-            return message.info('请选择场馆后抽奖');
-        }
-        runLottery({ category: 0, apiId: venueId });
-        setVenueId(null);
+        runLottery({ category: 0 });
     };
     return (
         <div className={styles.tab1}>
@@ -124,34 +121,18 @@ const tab1 = (props: any) => {
                                 }}
                             >
                                 查看抽奖记录
-                                <svg
-                                    xmlns='http://www.w3.org/2000/svg'
-                                    width='14'
-                                    height='14'
-                                    viewBox='0 0 14 14'
-                                    fill='none'
-                                >
-                                    <g clip-path='url(#clip0_2863_26999)'>
-                                        <path
-                                            d='M4.5 2L9.5 7L4.5 12'
-                                            stroke='#356280'
-                                            stroke-width='1.5'
-                                            stroke-linecap='round'
-                                            stroke-linejoin='round'
-                                        />
-                                    </g>
-                                    <defs>
-                                        <clipPath id='clip0_2863_26999'>
-                                            <rect width='14' height='14' fill='white' />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
+                                <img src={require('../../img/icon_arrow_right.png')} />
                             </label>
                         </div>
                     </div>
                 </div>
                 <div className={styles.rightBox}>
                     <div className={styles.jupiter}>
+                        {/*
+                            apng开宝箱动画
+                            在URL中添加?original 表示请求的是原始的、未经处理的图片。
+                            项目限制了图片大小，图片3M太大，导致动画没效果
+                        */}
                         {showMsg ? (
                             <img src={require('./img/box_open.png?original')} />
                         ) : (

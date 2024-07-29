@@ -17,7 +17,7 @@ function pleaseToDo() {
     };
     const pleaseLogin = (callback = () => {}) => {
         // const { phone } = userStore.userInfo;
-        let flag = false;
+        let flag = true;
         if (flag) {
             return callback();
         }
