@@ -18,7 +18,7 @@ const Tab2 = function (props) {
     const {
         content: { content2_1, content2_2, content2_3 },
     } = props;
-    // const { pleaseLogin } = pleaseToDo();
+    const { pleaseLogin } = pleaseToDo();
     const { run: runsecondApply } = useRequest(secondApply, {
         manual: true,
         onSuccess: (result) => {
@@ -39,9 +39,9 @@ const Tab2 = function (props) {
                     <img
                         src={require('./img/btn_activity_sqhdyh.png')}
                         onClick={() => {
-                            // pleaseLogin(() => {
-                            runsecondApply();
-                            // });
+                            pleaseLogin(() => {
+                                runsecondApply();
+                            });
                         }}
                     />
                 </div>

@@ -16,7 +16,7 @@ const Tab3 = function (props) {
     const {
         content: { content3_1, content3_2 },
     } = props;
-    // const { pleaseLogin } = pleaseToDo();
+    const { pleaseLogin } = pleaseToDo();
 
     const { run: runthirdApply } = useRequest(thirdApply, {
         manual: true,
@@ -48,9 +48,9 @@ const Tab3 = function (props) {
                     <img
                         src={require('./img/btn_activity_sqhdyh.png')}
                         onClick={() => {
-                            // pleaseLogin(() => {
-                            runthirdApply();
-                            // });
+                            pleaseLogin(() => {
+                                runthirdApply();
+                            });
                         }}
                     />
                 </div>

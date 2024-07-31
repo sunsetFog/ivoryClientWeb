@@ -15,7 +15,7 @@ import pleaseToDo from '@/components/pleaseToDo';
 import { message } from 'antd';
 
 const LuckyGridBox = function ({ cRef }) {
-    // const { pleaseLogin } = pleaseToDo();
+    const { pleaseLogin } = pleaseToDo();
 
     const [state, setState] = useSetState({
         blocks: [{ padding: '8px' }],
@@ -243,33 +243,33 @@ const LuckyGridBox = function ({ cRef }) {
 
     useImperativeHandle(cRef, () => ({
         playGame: () => {
-            // pleaseLogin(() => {
-            if (playLoading) {
-                return;
-            }
+            pleaseLogin(() => {
+                if (playLoading) {
+                    return;
+                }
 
-            setState({
-                playLoading: true,
-            });
-            lotteryApply({})
-                .then((result) => {
-                    if (sessionStorage.getItem('unlockedList')) {
-                        let unlockedList = JSON.parse(sessionStorage.getItem('unlockedList'));
-                        setState({
-                            unlockedPrizes: unlockedList,
-                        });
-                        sessionStorage.removeItem('unlockedList');
-                    }
-                    setState({
-                        unlockGiftId: result.data.unlockGiftId,
-                    });
-                })
-                .catch(() => {
-                    setState({
-                        playLoading: false,
-                    });
+                setState({
+                    playLoading: true,
                 });
-            // });
+                lotteryApply({})
+                    .then((result) => {
+                        if (sessionStorage.getItem('unlockedList')) {
+                            let unlockedList = JSON.parse(sessionStorage.getItem('unlockedList'));
+                            setState({
+                                unlockedPrizes: unlockedList,
+                            });
+                            sessionStorage.removeItem('unlockedList');
+                        }
+                        setState({
+                            unlockGiftId: result.data.unlockGiftId,
+                        });
+                    })
+                    .catch(() => {
+                        setState({
+                            playLoading: false,
+                        });
+                    });
+            });
         },
         userInfo,
     }));
