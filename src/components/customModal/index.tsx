@@ -5,16 +5,18 @@ import styles from './index.module.scss';
 interface ActivityRecordModalPropsType {
     children?: React.ReactNode; // 子内容
     title?: string; // 标题
-    onRef?: any;
+    onRef?: any; // ref
+    show?: boolean; // 展示
 }
 
-function customModal({ children, title, onRef }: ActivityRecordModalPropsType) {
+function customModal({ children, title, onRef, show }: ActivityRecordModalPropsType) {
     useImperativeHandle(onRef, () => {
         return {
             initWay: initWay,
+            closeWay: closeWay,
         };
     });
-    const [isVisible, setIsOfVisible] = useState(false);
+    const [isVisible, setIsOfVisible] = useState(show || false);
     const closeWay = () => {
         document.body.style.overflow = '';
         setIsOfVisible(false);
@@ -27,6 +29,13 @@ function customModal({ children, title, onRef }: ActivityRecordModalPropsType) {
         var ev = event || window.event;
         ev.stopPropagation();
     };
+    useEffect(() => {
+        if (!isVisible) {
+            const coke = document.getElementById('jelloTemporary');
+            if (!coke) return;
+            document.body.removeChild(coke);
+        }
+    }, [isVisible]);
     return isVisible ? (
         <article className={styles.customModal} onClick={closeWay}>
             <main onClick={defaultWay}>

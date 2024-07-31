@@ -14,6 +14,12 @@ const tab1 = (props: any) => {
             recRef.current.initWay();
         });
     };
+    const cancelWay = () => {
+        recRef.current.closeWay();
+    };
+    const okWay = () => {
+        recRef.current.closeWay();
+    };
     return (
         <article>
             <div className={styles.cabbage}>
@@ -58,8 +64,8 @@ const tab1 = (props: any) => {
                     <p>是否确定兑换当前礼品的彩金？兑换后将无法修改</p>
                     <div className={styles.brick}></div>
                     <div className={styles.submit}>
-                        <button>取消</button>
-                        <button>确定</button>
+                        <button onClick={cancelWay}>取消</button>
+                        <button onClick={okWay}>确定</button>
                     </div>
                 </div>
             </CustomModal>
