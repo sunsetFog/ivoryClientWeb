@@ -1,0 +1,62 @@
+.swiperPage {
+    width: 100%;
+    height: 100%;
+
+    :global {
+        .swiper {
+            width: 100%;
+            height: 100%;
+
+            .swiper-wrapper {
+                width: 100%;
+                height: 100%;
+            }
+
+            .swiper-pagination {
+                z-index: 9999;
+                position: absolute;
+                top: 50%;
+                right: 100px;
+
+                .swiper-pagination-bullet {
+                    display: block;
+                    opacity: 1 !important;
+                    height: 27px;
+                    width: 27px;
+                    margin: 0 0 8px;
+                    cursor: pointer;
+                    background: url('./img/circle_normal.png') no-repeat;
+                    background-size: 27px 27px;
+                }
+
+                .swiper-pagination-bullet-active {
+                    opacity: 1;
+                    background: url('./img/circle_active.png') no-repeat;
+                    background-size: 27px 27px;
+                }
+            }
+        }
+    }
+
+    .cardBox {
+        // width: 100%;
+        // height: 100% !important;
+        font-size: 14px;
+    }
+
+    .card1 {
+        background: rgba(50, 50, 100, 0.4);
+    }
+
+    .card2 {
+        background: rgba(60, 60, 255, 0.4);
+    }
+
+    .card3 {
+        background: rgba(100, 255, 100, 0.4);
+    }
+
+    .card4 {
+        background: rgba(255, 0, 0, 0.4);
+    }
+}

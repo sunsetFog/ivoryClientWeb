@@ -147,7 +147,8 @@
         "react-router-dom": "^6.21.2",
         "redux": "^4.2.1",
         "redux-order": "^1.0.4",
-        "sunny-js": "^2.3.4"
+        "sunny-js": "^2.3.4",
+        "swiper": "^11.1.8"
     },
     "volta": {
         "node": "18.16.0",
