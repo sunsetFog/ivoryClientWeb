@@ -13,7 +13,6 @@ function pleaseToDo() {
         recRef.current.closeWay();
     };
     const sureWay = () => {
-        recRef.current.closeWay();
         closeWay();
     };
     const pleaseLogin = (callback = () => {}) => {
