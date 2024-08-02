@@ -1,4 +1,4 @@
-import { get } from '@/@energy/ivoryDesign/@http/request';
+import { get } from '@/@energy/ivoryDesign/@http/fetch';
 
 /**
  * @function get

@@ -1,5 +1,5 @@
 // import { getVisitHeaders } from '@/@energy/ivoryDesign/@utils/request/requestTransfer';
-// import { post, get } from '@/@energy/ivoryDesign/@http/request';
+// import { post, get } from '@/@energy/ivoryDesign/@http/fetch';
 
 // // 获取抽奖记录
 // export function lotteryRecord() {
@@ -36,7 +36,7 @@
 // }
 
 // import customAxios from '~/api/http';
-import { get, post } from '@/@energy/ivoryDesign/@http/request';
+import { get, post } from '@/@energy/ivoryDesign/@http/fetch';
 let domain = 'http://localhost:8062/sky';
 export function getActiveInfoReq() {
     return get(domain + '/v3/activities', {});

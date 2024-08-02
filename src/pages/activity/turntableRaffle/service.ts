@@ -1,4 +1,4 @@
-import { get, post } from '@/@energy/ivoryDesign/@http/request';
+import { get, post } from '@/@energy/ivoryDesign/@http/fetch';
 let domain = 'http://localhost:8062/sky';
 
 export function lotteryApply(params: any) {
