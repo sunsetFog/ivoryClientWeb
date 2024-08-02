@@ -11,7 +11,6 @@
 // export function lotteryApply(params) {
 //   return post('/dragonBoat2023/first/lottery', {
 //     body: JSON.stringify(params),
-//     transformResponse: (data) => data,
 //   });
 // }
 
@@ -40,42 +39,32 @@
 import { get, post } from '@/@energy/ivoryDesign/@http/request';
 let domain = 'http://localhost:8062/sky';
 export function getActiveInfoReq() {
-    return get(domain + '/v3/activities', {
-        transformResponse: (data) => data,
-    });
+    return get(domain + '/v3/activities', {});
 }
 // 获取抽奖记录
 export function lotteryRecord() {
-    return post(domain + '/dragonBoat2023/first/infoList', {
-        transformResponse: (data) => data,
-    });
+    return post(domain + '/dragonBoat2023/first/infoList', {});
 }
 // 抽奖
 export function lotteryApply(params) {
     return post(domain + '/dragonBoat2023/first/lottery', {
         body: JSON.stringify(params),
-        transformResponse: (data) => data,
     });
 }
 
 // 第二重领取
 export function secondApply() {
-    return post(domain + '/dragonBoat2023/second/apply', {
-        transformResponse: (data) => data,
-    });
+    return post(domain + '/dragonBoat2023/second/apply', {});
 }
 
 // 第三重活动 活动申请
 export function thirdApply() {
-    return post(domain + '/dragonBoat2023/third/apply', {
-        transformResponse: (data) => data,
-    });
+    return post(domain + '/dragonBoat2023/third/apply', {});
 }
 
 // 第四重详情
 export function fourthTable(params) {
     return get(domain + '/dragonBoat2023/fourth/info', {
         body: JSON.stringify(params),
-        transformResponse: (data) => data,
     });
 }
