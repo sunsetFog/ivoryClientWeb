@@ -13,6 +13,7 @@
         min-width: 480px;
         min-height: 150px;
         border-radius: 16px;
+        overflow: hidden;
         background: linear-gradient(180deg,#fdfeff 13.02%,#fdfeff 86.98%,#edf7ff);
         box-shadow: 0 4px 10px rgba(125,168,207,.35), inset 0 -2px 0 #93b6d3, inset 0 -3px 2px #aecce4, inset 0 1px 1px #fff;
         header {

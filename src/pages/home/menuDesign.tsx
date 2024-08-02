@@ -5,7 +5,7 @@ import { Menu } from 'antd';
 import { AppstoreOutlined } from '@ant-design/icons';
 
 import routesArr from '@/router/index';
-import history from '@/utils/history';
+import history from '@/@energy/ivoryDesign/@utils/history';
 import withNavigation from '@/@energy/ivoryDesign/@higherOrder/withNavigation';
 
 class menuDesign extends Component {

@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { observer } from 'mobx-react';
 // component
-import { compose } from '@/utils/redux';
+import { compose } from '@/@energy/ivoryDesign/@utils/redux';
 import styles from './index.module.scss';
 import { Tabs } from 'antd';
 import Tab1 from './components/tab1';
