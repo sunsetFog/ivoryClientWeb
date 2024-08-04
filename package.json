@@ -125,6 +125,7 @@
     "dependencies": {
         "@reduxjs/toolkit": "^1.9.5",
         "antd": "^5.19.3",
+        "axios": "^1.7.3",
         "crypto-js": "^4.2.0",
         "dayjs": "^1.10.4",
         "dom-to-image": "^2.6.0",

@@ -1,6 +1,7 @@
 # 用于配置 Git 中需要被忽略、不提交的文件或目录
 packages/*
 @energy
+vue.config.js
 
 .DS_Store
 node_modules
@@ -11,8 +12,9 @@ anonymous-cli-metrics.json
 # Log files
 npm-debug.log*
 yarn-debug.log*
-yarn-error.log*
+# yarn-error.log*
 pnpm-debug.log*
+# yarn.lock
 
 # Editor directories and files
 .idea
