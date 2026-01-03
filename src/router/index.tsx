@@ -3,7 +3,7 @@
  * https://reactrouter.com/en/v6.3.0/getting-started/installation
  */
 import React from 'react';
-import SuspenseLazy from '@/components/SuspenseLazy';
+import SuspenseLazy from '@/@energy/ivoryDesign/components/SuspenseLazy';
 import { Navigate, RouteObject } from 'react-router-dom';
 import { extend } from 'dayjs';
 

@@ -117,14 +117,4 @@ react 框架作用：模块化、组件化、工程化
 
 学习文档： https://www.yuque.com/fechaichai/qeamqf
 
-# 优化方式,可以有效减小 bundle 大小,提升页面加载速度
 
-1. 对大图片进行压缩 - 使用图片压缩工具(如 TinyPNG),对 PNG、JPG 等大图片进行无损压缩。
-2. 懒加载图片 - 使用 React 懒加载库(如 react-lazyload),只在图片进入可视区域时才加载。
-3. 代码拆分 - 使用 React.lazy 和 Suspense 把代码拆分成 chunk,避免单个文件过大。
-4. 动态导入 - 对于不需要初始就加载的模块通过动态 import()来异步导入。
-5. Tree Shaking - 确保 Webpack 开启了 Tree Shaking,去除无用的代码。
-6. 静态资源 CDN - 大文件考虑放到 CDN,不打包到 bundle 中。
-7. 忽略警告 - 如果文件大小确实无法缩减,可以增加 size-limit 的警告阈值。
-8. 懒加载路由 - 对于页面组件,可以通过 React Router 的懒加载只加载当前需要的组件。
-9. 代码分割与动态导入 - 将大组件拆分为多个 chunk,按需加载。
