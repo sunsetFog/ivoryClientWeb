@@ -55,7 +55,6 @@ module.exports = {
     appMock: resolveApp('mock'),
     appSrc: resolveApp('src'),
     appRoot: resolveApp('./'),
-    appSky: resolveApp('../../'),
     appSrcComponents: resolveApp('src/components'),
     appSrcUtils: resolveApp('src/utils'),
     appProxySetup: resolveModule(resolveApp, 'webpack/setProxy'),
